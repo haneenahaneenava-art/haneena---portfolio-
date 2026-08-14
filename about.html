@@ -1,31 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Me | Haneena</title>
+
+<style>
+
+/* =========================
+   ROOT
+========================= */
+
+:root{
+    --cream:#f7eee4;
+    --cream2:#fff8ef;
+    --wine:#54171c;
+    --wine2:#641d22;
+    --muted:#806a66;
+    --line:#b99b90;
+    --text:#2d1718;
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#e9ddd2;
+    color:var(--text);
+    font-family:Georgia,"Times New Roman",serif;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.page{
+    width:100%;
+    max-width:1180px;
+    min-height:100vh;
+    margin:auto;
+    background:var(--cream2);
+    overflow:hidden;
+    box-shadow:0 15px 50px rgba(0,0,0,.12);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    padding:24px 55px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+}
+
+.logo{
+    color:var(--wine);
+    font-size:26px;
+    font-style:italic;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+nav a{
+    color:var(--muted);
+    transition:.3s ease;
+}
+
+nav a:hover{
+    color:var(--wine);
+}
+
+nav a.active{
+    color:var(--wine);
+}
+
+
+/* =========================
+   ABOUT HERO
+========================= */
+
+.aboutHero{
+    min-height:570px;
+    padding:80px 58px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:75px;
+    align-items:center;
+}
+
+
+/* LEFT TITLE */
+
+.kicker{
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:28px;
+}
+
+.aboutTitle h1{
+    color:var(--wine);
+    font-size:clamp(75px,10vw,130px);
+    font-weight:400;
+    line-height:.72;
+    letter-spacing:-7px;
+}
+
+.aboutTitle h1 span{
+    display:block;
+    color:var(--muted);
+    font-size:.55em;
+    letter-spacing:4px;
+    margin-top:40px;
+}
+
+
+/* RIGHT INTRO */
+
+.aboutText{
+    border-left:2px solid var(--wine);
+    padding-left:30px;
+}
+
+.aboutText h2{
+    color:var(--wine);
+    font-size:32px;
+    font-weight:400;
+    margin-bottom:22px;
+}
+
+.aboutText p{
+    color:var(--muted);
+    font-family:Arial,sans-serif;
+    font-size:15px;
+    line-height:1.8;
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   PERSONAL DETAILS
+========================= */
+
+.infoSection{
+    background:var(--wine);
+    padding:50px 55px;
+}
+
+.sectionTitle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+
+    color:var(--cream);
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+
+    margin-bottom:30px;
+}
+
+.sectionTitle::before,
+.sectionTitle::after{
+    content:"";
+    height:1px;
+    background:#bd9b90;
+    flex:1;
+}
+
+
+.infoGrid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.infoCard{
+    background:var(--cream);
+    padding:30px 15px;
+    text-align:center;
+    transition:.3s ease;
+}
+
+.infoCard:hover{
+    transform:translateY(-7px);
+}
+
+
+.infoIcon{
+    width:52px;
+    height:52px;
+
+    border:1px solid var(--line);
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    margin:auto;
+
+    color:var(--wine);
+    font-size:15px;
+}
+
+
+.infoCard h3{
+    color:var(--wine);
+
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+
+    margin-top:17px;
+    margin-bottom:9px;
+}
+
+
+.infoCard p{
+    color:var(--muted);
+
+    font-family:Arial,sans-serif;
+    font-size:11px;
+    line-height:1.7;
+}
+
+
+/* =========================
+   CAREER OBJECTIVE
+========================= */
+
+.objective{
+    padding:60px 55px;
+}
+
+
+.objectiveTitle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+
+    color:var(--muted);
+
+    font-family:Arial,sans-serif;
+    font-size:13px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+
+    margin-bottom:30px;
+}
+
+
+.objectiveTitle::before,
+.objectiveTitle::after{
+    content:"";
+    height:1px;
+    background:var(--line);
+    flex:1;
+}
+
+
+.objectiveBox{
+    max-width:800px;
+    margin:auto;
+
+    border:1px solid var(--line);
+
+    padding:35px 40px;
+
+    text-align:center;
+}
+
+
+.objectiveBox p{
+    color:var(--muted);
+
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    line-height:1.9;
+}
+
+
+/* =========================
+   STRENGTHS
+========================= */
+
+.strengthSection{
+    padding:20px 55px 60px;
+}
+
+
+.columns{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+
+.columnTitle{
+    color:var(--muted);
+
+    text-align:center;
+
+    font-family:Arial,sans-serif;
+    font-size:14px;
+    font-weight:400;
+
+    letter-spacing:4px;
+    text-transform:uppercase;
+
+    margin-bottom:27px;
+}
+
+
+.skillList{
+    display:grid;
+    gap:20px;
+}
+
+
+.skillItem{
+    display:grid;
+    grid-template-columns:45px 1fr;
+    gap:15px;
+    align-items:start;
+}
+
+
+.skillIcon{
+    width:39px;
+    height:39px;
+
+    border:1px solid var(--line);
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    color:var(--wine);
+}
+
+
+.skillItem h3{
+    color:var(--wine);
+
+    font-family:Arial,sans-serif;
+    font-size:13px;
+
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+    margin-bottom:4px;
+}
+
+
+.skillItem p{
+    color:var(--muted);
+
+    font-family:Arial,sans-serif;
+    font-size:12px;
+    line-height:1.6;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:var(--wine);
+    color:var(--cream);
+
+    padding:42px 55px;
+
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr;
+
+    gap:35px;
+
+    align-items:center;
+}
+
+
+.contact h2{
+    font-size:28px;
+    font-weight:400;
+}
+
+
+.contactIntro{
+    color:#dfc4ba;
+
+    font-family:Arial,sans-serif;
+    font-size:12px;
+
+    margin-top:8px;
+}
+
+
+.contactList{
+    display:grid;
+    gap:12px;
+
+    font-family:Arial,sans-serif;
+    font-size:12px;
+
+    color:#dfc4ba;
+}
+
+
+.contactList span{
+    color:#b99087;
+}
+
+
+.quote{
+    border-left:1px solid #b99087;
+
+    padding-left:23px;
+
+    color:var(--cream);
+
+    font-size:16px;
+    font-style:italic;
+    line-height:1.5;
+}
+
+
+.quote small{
+    display:block;
+
+    color:#d5b5aa;
+
+    font-family:Arial,sans-serif;
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    margin-top:9px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:17px;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-family:Arial,sans-serif;
+    font-size:9px;
+
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(20px);
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    header{
+        padding:20px 25px;
+
+        flex-direction:column;
+
+        gap:17px;
+    }
+
+
+    nav{
+        gap:14px;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+    }
+
+
+    .aboutHero{
+        grid-template-columns:1fr;
+
+        padding:60px 25px;
+
+        gap:45px;
+
+        text-align:center;
+    }
+
+
+    .aboutText{
+        text-align:left;
+
+        padding-left:20px;
+    }
+
+
+    .infoGrid{
+        grid-template-columns:1fr 1fr;
+    }
+
+
+    .infoSection{
+        padding:40px 20px;
+    }
+
+
+    .columns{
+        grid-template-columns:1fr;
+
+        gap:50px;
+    }
+
+
+    .strengthSection{
+        padding:20px 25px 50px;
+    }
+
+
+    .contact{
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        padding:40px 25px;
+    }
+
+
+    .quote{
+        border-left:0;
+
+        border-top:1px solid #b99087;
+
+        padding:20px 0 0;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:500px){
+
+    .logo{
+        font-size:23px;
+    }
+
+
+    nav{
+        font-size:9px;
+
+        gap:10px;
+    }
+
+
+    .aboutTitle h1{
+        font-size:70px;
+
+        letter-spacing:-5px;
+    }
+
+
+    .aboutText h2{
+        font-size:26px;
+    }
+
+
+    .aboutText p{
+        font-size:13px;
+    }
+
+
+    .infoGrid{
+        grid-template-columns:1fr;
+    }
+
+
+    .objective{
+        padding:45px 20px;
+    }
+
+
+    .objectiveBox{
+        padding:28px 20px;
+    }
+
+}
+
+</style>
+</head>
+
+
 <body>
 
 <div class="page">
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
-<a class="logo" href="index.html">
+<a href="index.html" class="logo">
 Haneena
 </a>
 
+
 <nav>
-<a href="index.html">Home</a>
-<a class="active" href="about.html">About Me</a>
-<a href="index.html#experience">Experience</a>
-<a href="index.html#skills">Skills</a>
-<a href="index.html#contact">Contact</a>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="about.html" class="active">
+About Me
+</a>
+
+<a href="index.html#experience">
+Experience
+</a>
+
+<a href="index.html#skills">
+Skills
+</a>
+
+<a href="index.html#contact">
+Contact
+</a>
+
 </nav>
 
 </header>
 
 
+
+<!-- =========================
+     ABOUT HERO
+========================= -->
+
 <section class="aboutHero">
 
-<div>
+
+<div class="aboutTitle reveal">
 
 <div class="kicker">
 Accounting Portfolio
 </div>
+
 
 <h1>
 ABOUT
@@ -35,11 +719,13 @@ ABOUT
 </div>
 
 
-<div class="aboutText">
+
+<div class="aboutText reveal">
 
 <h2>
 Hello, I'm Haneena.
 </h2>
+
 
 <p>
 I am a B.Com Finance graduate with an interest
@@ -48,11 +734,19 @@ learning new accounting skills and building my
 professional career.
 </p>
 
+
 <p>
-I have 1 month of practical accounting experience
-and knowledge of Tally and Tally Prime. My career
-goal is to become a skilled and dependable
-Junior Accountant.
+I have practical experience in accounting and
+knowledge of Tally and Tally Prime. I enjoy
+working with numbers, maintaining accuracy and
+developing my professional skills.
+</p>
+
+
+<p>
+My career goal is to grow as a skilled and
+dependable Junior Accountant and contribute
+positively to an organization.
 </p>
 
 </div>
@@ -60,55 +754,120 @@ Junior Accountant.
 </section>
 
 
-<section class="info">
 
-<div class="infoCard">
-<div class="icon">B</div>
-<h3>Education</h3>
+<!-- =========================
+     PERSONAL INFORMATION
+========================= -->
+
+<section class="infoSection">
+
+
+<div class="sectionTitle">
+My Profile
+</div>
+
+
+<div class="infoGrid">
+
+
+<div class="infoCard reveal">
+
+<div class="infoIcon">
+B
+</div>
+
+<h3>
+Education
+</h3>
+
 <p>
-Bachelor of Commerce<br>
+Bachelor of Commerce
+<br>
 B.Com Finance
 </p>
+
 </div>
 
 
-<div class="infoCard">
-<div class="icon">₹</div>
-<h3>Career</h3>
+
+<div class="infoCard reveal">
+
+<div class="infoIcon">
+₹
+</div>
+
+<h3>
+Career
+</h3>
+
 <p>
-Aspiring<br>
+Aspiring
+<br>
 Junior Accountant
 </p>
+
 </div>
 
 
-<div class="infoCard">
-<div class="icon">TP</div>
-<h3>Software</h3>
+
+<div class="infoCard reveal">
+
+<div class="infoIcon">
+TP
+</div>
+
+<h3>
+Software
+</h3>
+
 <p>
-Tally<br>
+Tally
+<br>
 Tally Prime
 </p>
+
 </div>
 
 
-<div class="infoCard">
-<div class="icon">01</div>
-<h3>Experience</h3>
+
+<div class="infoCard reveal">
+
+<div class="infoIcon">
+01
+</div>
+
+<h3>
+Experience
+</h3>
+
 <p>
-1 Month<br>
+1 Month
+<br>
 Practical Experience
 </p>
+
+</div>
+
+
 </div>
 
 </section>
 
+
+
+<!-- =========================
+     CAREER OBJECTIVE
+========================= -->
 
 <section class="objective">
 
-<div class="title">
+
+<div class="objectiveTitle">
 Career Objective
 </div>
+
+
+<div class="objectiveBox reveal">
 
 <p>
 To obtain a position as a Junior Accountant where
@@ -117,73 +876,187 @@ practical skills, gain professional experience and
 contribute effectively to the organization.
 </p>
 
+</div>
+
 </section>
 
 
-<section class="two">
+
+<!-- =========================
+     STRENGTHS & GOALS
+========================= -->
+
+<section class="strengthSection">
+
+
+<div class="columns">
+
+
+<!-- STRENGTHS -->
 
 <div>
 
-<h2>
+<h2 class="columnTitle">
 Professional Strengths
 </h2>
 
-<div class="list">
 
-<div class="item">
+<div class="skillList">
 
-<div class="icon">✓</div>
+
+<div class="skillItem reveal">
+
+<div class="skillIcon">
+✓
+</div>
 
 <div>
-<h3>Accuracy</h3>
+
+<h3>
+Accuracy
+</h3>
 
 <p>
-Careful and organized approach to accounting work.
+Careful and organized approach to
+accounting work.
 </p>
-</div>
 
 </div>
 
+</div>
 
-<div class="item">
 
-<div class="icon">✦</div>
+
+<div class="skillItem reveal">
+
+<div class="skillIcon">
+✦
+</div>
 
 <div>
-<h3>Communication</h3>
+
+<h3>
+Communication
+</h3>
 
 <p>
-Good communication skills for professional teamwork.
+Good communication skills for
+professional teamwork.
 </p>
-</div>
 
 </div>
 
 </div>
 
-</div>
 
+
+<div class="skillItem reveal">
+
+<div class="skillIcon">
++
+</div>
 
 <div>
 
-<h2>
+<h3>
+Learning
+</h3>
+
+<p>
+Interested in continuously improving
+accounting and finance knowledge.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- CAREER -->
+
+<div>
+
+<h2 class="columnTitle">
 Career Direction
 </h2>
 
-<div class="list">
 
-<div class="item">
+<div class="skillList">
 
-<div class="icon">→</div>
+
+<div class="skillItem reveal">
+
+<div class="skillIcon">
+→
+</div>
 
 <div>
-<h3>Junior Accountant</h3>
+
+<h3>
+Junior Accountant
+</h3>
 
 <p>
-Looking to build practical accounting experience
-and grow professionally.
+Looking to build practical accounting
+experience and grow professionally.
 </p>
+
 </div>
+
+</div>
+
+
+
+<div class="skillItem reveal">
+
+<div class="skillIcon">
+₹
+</div>
+
+<div>
+
+<h3>
+Accounting
+</h3>
+
+<p>
+Interested in developing strong
+accounting and finance skills.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="skillItem reveal">
+
+<div class="skillIcon">
+★
+</div>
+
+<div>
+
+<h3>
+Professional Growth
+</h3>
+
+<p>
+Focused on becoming a reliable and
+responsible accounting professional.
+</p>
+
+</div>
+
+</div>
+
 
 </div>
 
@@ -194,7 +1067,13 @@ and grow professionally.
 </section>
 
 
-<section class="contact">
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
 
 <div>
 
@@ -202,26 +1081,43 @@ and grow professionally.
 Let's Work Together
 </h2>
 
-<p>
+<p class="contactIntro">
 Open to opportunities in accounting and finance.
 </p>
 
 </div>
 
 
+
 <div class="contactList">
 
+
 <div>
-✉ <span>Email</span><br>
+✉ &nbsp;
+<span>Email</span>
+<br>
 haneenahaneenava@gmail.com
 </div>
 
+
 <div>
-☎ <span>Phone</span><br>
+☎ &nbsp;
+<span>Phone</span>
+<br>
 8129167328
 </div>
 
+
+<div>
+⌖ &nbsp;
+<span>Role</span>
+<br>
+Junior Accountant
 </div>
+
+
+</div>
+
 
 
 <div class="quote">
@@ -235,14 +1131,93 @@ are the foundation of great accounting.
 
 </div>
 
+
 </section>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
+
 Haneena • Accounting • Finance
+
 </footer>
+
 
 </div>
 
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+/* Scroll reveal animation */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+
+const observer =
+new IntersectionObserver(
+
+(entries) => {
+
+entries.forEach((entry) => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},
+
+{
+threshold:0.12
+}
+
+);
+
+
+revealElements.forEach((element) => {
+
+observer.observe(element);
+
+});
+
+
+/* Mobile navigation click */
+
+document.querySelectorAll("nav a").forEach((link) => {
+
+link.addEventListener("click", () => {
+
+document.querySelectorAll("nav a")
+.forEach((item) => {
+
+item.classList.remove("active");
+
+});
+
+link.classList.add("active");
+
+});
+
+});
+
+</script>
+
+
 </body>
 </html>
+
